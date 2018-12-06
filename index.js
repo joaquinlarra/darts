@@ -54,17 +54,31 @@ for(let turn = 0; turn < 3; turn++) {
       let xNext = target.x;
       let yNext = Math.tan(shot.shootAngle * Math.PI/180)*(xNext) + input.arrowY0;
       let b = [xNext, yNext];
-      console.log(b);
+      
       let hit = collide(a, b, circle, radius);
-      console.log(hit);
       if(hit) {
-        results[player] += target.prizePoints;
+        if( !results[player]) results[player] = 0;
+
+        results[player] += Number(target.prizePoints);
       }
     }
   }
 }
 
-console.log(`the winner is ${results.keys().reduce(function(a, b){ return results[a] > results[b] ? a : b })}`);
+let scores = Object.values(results);
+const winnerScore = Math.max(...scores);
+
+if(Object.keys(results).length) {
+
+  Object.keys(results).forEach(player => {
+    let score = results[player];
+    if(score == winnerScore) {
+      console.log(`${player} won the match with ${score} points\n`);
+    }
+  });
+
+}
+
 
 
 
