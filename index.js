@@ -64,6 +64,8 @@ for(let turn = 0; turn < 3; turn++) {
   }
 }
 
+console.log(`the winner is ${results.keys().reduce(function(a, b){ return results[a] > results[b] ? a : b })}`);
+
 
 
 
