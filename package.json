@@ -1,0 +1,14 @@
+{
+  "name": "darts",
+  "version": "1.0.0",
+  "description": "darts demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joaquin astelarra",
+  "license": "ISC",
+  "dependencies": {
+    "line-circle-collision": "^1.1.3"
+  }
+}
